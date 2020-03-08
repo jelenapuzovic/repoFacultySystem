@@ -8,6 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,6 +21,10 @@ public class Profesor extends Korisnik {
 	private String ime;
 	private String prezime;
 	private Date datumZasnivanjaRadnogOdnosa;
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "DEPARTMENT_ID")
+	private Department department;
 	
 	@OneToMany(mappedBy = "profesor", orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<ProfesorPredmet> profesorPredmeti;

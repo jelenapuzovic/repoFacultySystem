@@ -1,5 +1,6 @@
 package domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -16,7 +17,7 @@ public class Student extends Korisnik{
 	private String ime;
 	private String prezime;
 	private String brIndeksa;
-	private Date datumRodj;
+	private LocalDate datumRodj;
 	private StudijskiProgram studijskiProgram;
 	
 	@OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.ALL)
@@ -56,11 +57,11 @@ public class Student extends Korisnik{
 		this.brIndeksa = brIndeksa;
 	}
 
-	public Date getDatumRodj() {
+	public LocalDate getDatumRodj() {
 		return datumRodj;
 	}
 
-	public void setDatumRodj(Date datumRodj) {
+	public void setDatumRodj(LocalDate datumRodj) {
 		this.datumRodj = datumRodj;
 	}
 

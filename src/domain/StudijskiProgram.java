@@ -13,6 +13,7 @@ public class StudijskiProgram {
 
 	@Id
 	private Long id;
+	
 	private String ime;
 	
 	@OneToMany
